@@ -1,9 +1,16 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `pg9a381fka8t`,
+        accessToken: `Vu11vxLVT3g8Zoa_aBERVAaBnx4RddayajuZAyCMneU`,
+        downloadLocal: true,
+      },
+    },
+  ],
 }
